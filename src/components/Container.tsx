@@ -1,8 +1,4 @@
-import React from 'react'
-
-type containerProp = {
-    styles: React.CSSProperties
-}
+import { containerProp } from "./Container.types"
 
 const Container = ({styles} : containerProp) => {
   return (
