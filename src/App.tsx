@@ -9,6 +9,7 @@ import {posts } from "./data/post"
 import {InputEle, InputEle2} from './components/InputEle';
 import Container from './components/Container';
 import LoggedIn from './components/LoggedIn';
+import User from './components/User';
 
 function App() {
   const [idd, setIdd] = useState<number | undefined>()
@@ -22,7 +23,8 @@ function App() {
   return (
     <div className="App">
       <h1>Learning Typescript</h1>
-      <LoggedIn />
+      {/* <LoggedIn /> */}
+      <User />
       <Container styles={{border: '1px solid #ccc', padding: '1rem', margin: '20px', backgroundColor: '#f4f4f4'}} />
       <InputEle value={name} handleChange={(event) => setName(event.target.value)}/>
       {name && <span>You have typed : {name}</span>}
