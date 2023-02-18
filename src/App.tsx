@@ -6,9 +6,11 @@ import Heading from './components/Heading';
 import Oscar from './components/Oscar';
 import StatusC from './components/StatusC';
 import {posts } from "./data/post"
+import {InputEle, InputEle2} from './components/InputEle';
 
 function App() {
   const [idd, setIdd] = useState<number | undefined>()
+  const [name, setName] = useState<string>('')
   const funcc1 = (e: React.MouseEvent, id: number) => {
     setIdd(id)
     console.log("hello funcc1, idd : ", idd)
@@ -17,6 +19,10 @@ function App() {
   return (
     <div className="App">
       <h1>Learning Typescript</h1>
+      <InputEle value={name} handleChange={(event) => setName(event.target.value)}/>
+      {name && <span>You have typed : {name}</span>}
+      <InputEle2 />
+      <br />
       <Button handleClick={(e, id) => funcc1(e, id)}/>
       <Oscar>
         <Heading>
