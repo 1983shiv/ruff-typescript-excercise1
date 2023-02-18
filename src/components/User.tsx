@@ -7,7 +7,10 @@ type AuthUser = {
 
 
 export const User = () => {
+
+    // Initial value type is different than future value type
     const [user, setUser] = useState<AuthUser | null>(null)
+    // const [user, setUser] = useState<AuthUser>({} as AuthUser)
     const handleLogin = () => {
         setUser({
             name: 'Shiv',
