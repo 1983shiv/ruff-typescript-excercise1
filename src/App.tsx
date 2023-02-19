@@ -1,16 +1,20 @@
 import './App.css';
 import { useState } from 'react';
-import Button from './components/Button';
-import Greet from './components/Greet';
-import Heading from './components/Heading';
-import Oscar from './components/Oscar';
-import StatusC from './components/StatusC';
-import {posts } from "./data/post"
-import {InputEle, InputEle2} from './components/InputEle';
-import Container from './components/Container';
-import LoggedIn from './components/LoggedIn';
-import User from './components/User';
-import Counter from './components/Counter';
+// import Button from './components/Button';
+// import Greet from './components/Greet';
+// import Heading from './components/Heading';
+// import Oscar from './components/Oscar';
+// import StatusC from './components/StatusC';
+// import {posts } from "./data/post"
+// import {InputEle, InputEle2} from './components/InputEle';
+// import Container from './components/Container';
+// import LoggedIn from './components/LoggedIn';
+// import User from './components/User';
+// import Counter from './components/Counter';
+// import { ThemeContextProvider } from './components/context/ThemeContext';
+// import Box from "./components/context/Box"
+import { UserContextProvider } from './components/context/UserContext';
+import User from './components/context/User';
 
 function App() {
   const [idd, setIdd] = useState<number | undefined>()
@@ -24,8 +28,14 @@ function App() {
   return (
     <div className="App">
       <h1>Learning Typescript</h1>
+      <UserContextProvider>
+        <User />
+      </UserContextProvider>
+      {/* <ThemeContextProvider>
+        <Box />
+      </ThemeContextProvider> */}
       {/* <LoggedIn /> */}
-      <Counter />
+      {/* <Counter />
       <User />
       <Container styles={{border: '1px solid #ccc', padding: '1rem', margin: '20px', backgroundColor: '#f4f4f4'}} />
       <InputEle value={name} handleChange={(event) => setName(event.target.value)}/>
@@ -39,7 +49,7 @@ function App() {
         </Heading>
       </Oscar>
       <StatusC msg={'loading'} />
-      <Greet funcc1 = {funcc1} isLoggedIn = {true} posts= {posts}  messageCount={20}/>
+      <Greet funcc1 = {funcc1} isLoggedIn = {true} posts= {posts}  messageCount={20}/> */}
      </div> 
       );
 }
